@@ -10,6 +10,16 @@
   - No authentication required
   - See `notes/20260216_api_endpoint_discovered.md`
 
+- [x] ✅ **CRITICAL BREAKTHROUGH** - Full circular content API discovered
+  - Endpoint: `GET /api/circular/content?refNo={refNo}&lang={lang}`
+  - Returns **complete HTML content** - no scraping needed!
+  - Also includes: email body, appendix list, metadata
+  - See `notes/20260216_circular_content_api_complete.md`
+
+- [x] ✅ **APPENDIX DOWNLOAD** - Appendix endpoint discovered
+  - Endpoint: `GET /api/circular/openAppendix?lang={lang}&refNo={refNo}&appendix={index}`
+  - Found in `emailBody` field of content API response
+
 ## 2025-02
 
 - [x] Repository structure established
