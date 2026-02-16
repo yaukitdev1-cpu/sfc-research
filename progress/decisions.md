@@ -4,39 +4,41 @@
 
 ## 2026-02-16
 
-### Decision: Pure API Implementation for sfc-fetch (with Year-Based Logic)
-**Rationale:** Three API endpoints discovered. However, a critical limitation requires two-tier architecture:
+### Decision: Pure API Implementation for sfc-fetch - 2012+ Coverage Only
+**Rationale:** After extensive testing of legacy circular access methods:
 
 **For 2012+ circulars:**
-- `POST /api/circular/search` - List all circulars
+- `POST /api/circular/search` - List all circulars ✅
 - `GET /api/circular/content` - **Full HTML content** ✅
-- `GET /api/circular/openAppendix` - Download appendices
+- `GET /api/circular/openAppendix` - Download appendices ✅
 
 **For 2000-2011 circulars:**
-- Search API returns metadata ✅
-- Content API returns `html: null` ❌
-- No structured content available
+- Tested `openFile?refNo=H###` - Returns SPA shell, no file ❌
+- Tested `faxFileKeySeq` with negative values - Not downloadable ❌
+- Tested browser inspection - No hidden API calls or iframes ❌
+- **Conclusion: Legacy circulars not accessible via current API**
 
-**This means:**
-- ✅ Direct HTTP API calls only (no browser needed)
-- ✅ Full HTML content for 2012+ (13 years of data)
-- ⚠️ Limited metadata only for 2000-2011 (12 years)
-- ⚠️ Need HTML-to-Markdown conversion for 2012+ content
-- ⚠️ Consider if 2012+ coverage is sufficient for compliance use case
+**Final Decision:**
+- ✅ **Implement sfc-fetch for 2012+ only** (~13 years, ~500+ circulars)
+- ✅ Pure API implementation, no browser needed
+- ✅ Full structured HTML content available
+- ⚠️ Acknowledge gap: 2000-2011 exists in search but without content
+- ⚠️ Consider future enhancement if SFC opens legacy archive
 
-### HTML Chunking Strategy
+**Why 2012+ is sufficient:**
+- Covers all modern regulatory frameworks
+- 13 years of complete data is substantial
+- Most compliance requirements focus on recent regulations
+- Avoids complexity of web scraping legacy PDFs
+
+### HTML Chunking Strategy (2012+)
 **Observation:** Circular HTML uses `<ol>` (ordered lists) for main sections, making natural chunking points at each `<li>` element.
 
-**Proposed approach (for 2012+):**
+**Proposed approach:**
 - Parse HTML with cheerio or similar
 - Extract each `<li>` as a content chunk
 - Maintain section numbering (1, 2, 3...)
 - Store footnotes separately
-
-**For pre-2012:**
-- Store metadata only (title, date, refNo, publicUrl)
-- Consider alternative: `openFile?refNo=H###` pattern may serve PDFs
-- Decision needed: Is 2012+ coverage sufficient?
 
 ## 2025-02-15
 

@@ -27,6 +27,14 @@
   - Pre-2012 circulars use different ref format (H### vs YYEC##)
   - See `notes/20260216_historical_data_limitations.md`
 
+- [x] ✅ **LEGACY FILE ACCESS INVESTIGATED** - No direct download method found
+  - Tested: `openFile?refNo=H###` URL pattern
+  - Tested: `faxFileKeySeq` with negative values (-8805, -8429)
+  - Tested: Browser inspection for hidden download links
+  - Result: **Legacy circulars (2000-2011) not accessible via API**
+  - Negative `faxFileKeySeq` indicates "file not digitally available"
+  - See `notes/20260216_legacy_file_access_investigation.md`
+
 ## 2025-02
 
 - [x] Repository structure established
