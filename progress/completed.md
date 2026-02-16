@@ -35,6 +35,13 @@
   - Negative `faxFileKeySeq` indicates "file not digitally available"
   - See `notes/20260216_legacy_file_access_investigation.md`
 
+- [x] ✅ **DEFINITIVE CONFIRMATION** - Browser network analysis proves inaccessibility
+  - Captured ALL network requests when loading `openFile?refNo=H035`
+  - Result: **NO API calls made** - React app doesn't fetch legacy content
+  - Only loads: HTML shell + JS/CSS bundles + locale files (11 requests total)
+  - Legacy files simply **not in the system**
+  - See `notes/20260216_legacy_final_conclusion.md`
+
 ## 2025-02
 
 - [x] Repository structure established
