@@ -2,17 +2,18 @@
 
 ## Current Priority Tasks
 
-- [ ] Investigate SFC e-Distribution system for API endpoints
-- [ ] Document website structure and navigation patterns
-- [ ] Test current scraping approach feasibility
-- [ ] Analyze document structure patterns
+- [x] ✅ **DONE** - Investigate SFC e-Distribution system for API endpoints (API FOUND!)
+- [ ] Explore individual document endpoint structure
+- [ ] Test news and consultation APIs (similar pattern expected)
+- [ ] Document rate limiting and pagination behavior
+- [ ] Analyze full document content structure
 
-## Research Questions
+## Research Questions - Status
 
-1. Does SFC expose any public/financial data APIs?
-2. How has the e-Distribution site structure changed?
-3. What are the current rate limits or anti-bot measures?
-4. What content chunking strategy works best for SFC documents?
+1. ✅ **ANSWERED** - Does SFC expose any public/financial data APIs? **YES!** `POST /api/circular/search`
+2. 🔄 How has the e-Distribution site structure changed? - In progress
+3. ❓ What are the current rate limits or anti-bot measures? - Needs testing
+4. ❓ What content chunking strategy works best for SFC documents? - Pending document analysis
 
 ---
 
