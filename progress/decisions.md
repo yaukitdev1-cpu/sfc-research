@@ -4,30 +4,39 @@
 
 ## 2026-02-16
 
-### Decision: Pure API Implementation for sfc-fetch
-**Rationale:** Three API endpoints discovered:
-1. `POST /api/circular/search` - List all circulars with pagination
-2. `GET /api/circular/content` - **Full HTML content** of any circular
-3. `GET /api/circular/openAppendix` - Download appendix documents
+### Decision: Pure API Implementation for sfc-fetch (with Year-Based Logic)
+**Rationale:** Three API endpoints discovered. However, a critical limitation requires two-tier architecture:
 
-**This means NO headless browser (Puppeteer/Playwright) is needed at all.**
+**For 2012+ circulars:**
+- `POST /api/circular/search` - List all circulars
+- `GET /api/circular/content` - **Full HTML content** ✅
+- `GET /api/circular/openAppendix` - Download appendices
 
-**Implications:**
-- ✅ Direct HTTP API calls only
-- ✅ No JavaScript execution required
-- ✅ Full content available as HTML string in JSON response
-- ✅ Appendix downloads via dedicated API
-- ⚠️ Need HTML-to-Markdown conversion for storage
-- ⚠️ Still need to test rate limits
+**For 2000-2011 circulars:**
+- Search API returns metadata ✅
+- Content API returns `html: null` ❌
+- No structured content available
+
+**This means:**
+- ✅ Direct HTTP API calls only (no browser needed)
+- ✅ Full HTML content for 2012+ (13 years of data)
+- ⚠️ Limited metadata only for 2000-2011 (12 years)
+- ⚠️ Need HTML-to-Markdown conversion for 2012+ content
+- ⚠️ Consider if 2012+ coverage is sufficient for compliance use case
 
 ### HTML Chunking Strategy
 **Observation:** Circular HTML uses `<ol>` (ordered lists) for main sections, making natural chunking points at each `<li>` element.
 
-**Proposed approach:**
+**Proposed approach (for 2012+):**
 - Parse HTML with cheerio or similar
 - Extract each `<li>` as a content chunk
 - Maintain section numbering (1, 2, 3...)
 - Store footnotes separately
+
+**For pre-2012:**
+- Store metadata only (title, date, refNo, publicUrl)
+- Consider alternative: `openFile?refNo=H###` pattern may serve PDFs
+- Decision needed: Is 2012+ coverage sufficient?
 
 ## 2025-02-15
 

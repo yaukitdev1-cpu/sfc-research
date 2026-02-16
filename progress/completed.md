@@ -20,6 +20,13 @@
   - Endpoint: `GET /api/circular/openAppendix?lang={lang}&refNo={refNo}&appendix={index}`
   - Found in `emailBody` field of content API response
 
+- [x] ✅ **CRITICAL LIMITATION DISCOVERED** - Historical data has HTML gap
+  - Search API works for years 2000-2025 ✅
+  - Content API returns `html: null` for pre-2012 circulars ⚠️
+  - Full HTML content only available from 2012 onward
+  - Pre-2012 circulars use different ref format (H### vs YYEC##)
+  - See `notes/20260216_historical_data_limitations.md`
+
 ## 2025-02
 
 - [x] Repository structure established
