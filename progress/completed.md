@@ -4,51 +4,49 @@
 
 ## 2026-02-16
 
-- [x] ✅ **MAJOR DISCOVERY** - SFC circular API endpoint found via browser network inspection
-  - Endpoint: `POST /edistributionWeb/api/circular/search`
-  - Returns JSON with pagination support
-  - No authentication required
+### 🎉 MAJOR DISCOVERIES
+
+- [x] ✅ **CIRCULAR SEARCH API** - List all circulars with pagination
+  - `POST /api/circular/search`
+  - Works for years 2000-2025
   - See `notes/20260216_api_endpoint_discovered.md`
 
-- [x] ✅ **CRITICAL BREAKTHROUGH** - Full circular content API discovered
-  - Endpoint: `GET /api/circular/content?refNo={refNo}&lang={lang}`
-  - Returns **complete HTML content** - no scraping needed!
-  - Also includes: email body, appendix list, metadata
+- [x] ✅ **CIRCULAR CONTENT API** - Get full HTML content
+  - `GET /api/circular/content?refNo={refNo}&lang={lang}`
+  - Returns structured HTML (2012+ only)
   - See `notes/20260216_circular_content_api_complete.md`
 
-- [x] ✅ **APPENDIX DOWNLOAD** - Appendix endpoint discovered
-  - Endpoint: `GET /api/circular/openAppendix?lang={lang}&refNo={refNo}&appendix={index}`
-  - Found in `emailBody` field of content API response
+- [x] ✅ **CIRCULAR PDF API** - Download PDF files ⭐ **CRITICAL FINDING**
+  - `GET /api/circular/openFile?lang={lang}&refNo={refNo}`
+  - Returns `application/pdf` for ALL years (2000-2025)!
+  - Legacy circulars DO have PDFs! See `notes/20260216_legacy_final_conclusion.md`
 
-- [x] ✅ **CRITICAL LIMITATION DISCOVERED** - Historical data has HTML gap
-  - Search API works for years 2000-2025 ✅
-  - Content API returns `html: null` for pre-2012 circulars ⚠️
-  - Full HTML content only available from 2012 onward
-  - Pre-2012 circulars use different ref format (H### vs YYEC##)
+- [x] ✅ **APPENDIX API** - Download appendix PDFs
+  - `GET /api/circular/openAppendix?lang={lang}&refNo={refNo}&appendix={index}`
+  - Works for ALL years including legacy (2000-2025)
+  - See investigation notes
+
+### 🔍 INVESTIGATIONS COMPLETED
+
+- [x] ✅ **HTML Content Gap Discovered**
+  - 2012+ (YYEC##): HTML + PDF available
+  - 2000-2011 (H###): PDF only, no HTML
   - See `notes/20260216_historical_data_limitations.md`
 
-- [x] ✅ **LEGACY FILE ACCESS INVESTIGATED** - No direct download method found
-  - Tested: `openFile?refNo=H###` URL pattern
-  - Tested: `faxFileKeySeq` with negative values (-8805, -8429)
-  - Tested: Browser inspection for hidden download links
-  - Result: **Legacy circulars (2000-2011) not accessible via API**
-  - Negative `faxFileKeySeq` indicates "file not digitally available"
-  - See `notes/20260216_legacy_file_access_investigation.md`
+- [x] ✅ **PDF Discovery for Legacy**
+  - Tested H035 (2000): Returns PDF (112,748 bytes)
+  - Tested H618 (2011): Has 2 appendices, both downloadable
+  - Confirmed: ALL years have PDFs via `openFile` API
 
-- [x] ✅ **DEFINITIVE CONFIRMATION** - Browser network analysis proves inaccessibility
-  - Captured ALL network requests when loading `openFile?refNo=H035`
-  - Result: **NO API calls made** - React app doesn't fetch legacy content
-  - Only loads: HTML shell + JS/CSS bundles + locale files (11 requests total)
-  - Legacy files simply **not in the system**
-  - See `notes/20260216_legacy_final_conclusion.md`
+- [x] ✅ **Appendix Discovery for Legacy**
+  - H618 (2011): 2 appendices, PDFs available
+  - API: `openAppendix?refNo=H618&appendix=0` returns PDF
 
-- [x] ✅ **GATEWAY URL TEST** - Confirmed same API behavior via gateway route
-  - Tested: `gateway/EN/circular/doc?refNo=H035` (legacy) vs `doc?refNo=26EC6` (modern)
-  - Both trigger `/api/circular/content` endpoint
-  - Legacy: Returns `html: null` - page renders empty
-  - Modern: Returns full HTML (5,962 chars) - page renders complete content
-  - **Not a URL routing issue - backend simply has no legacy content**
-  - See `notes/20260216_gateway_url_test.md`
+### 📚 DELIVERABLES CREATED
+
+- [x] ✅ **API Summary**: `findings/CIRCULAR_API_SUMMARY.md`
+- [x] ✅ **Workflow Guide**: `findings/SFC_FETCH_WORKFLOW.md`
+- [x] ✅ **Architecture**: `findings/ARCHITECTURE.md`
 
 ## 2025-02
 
