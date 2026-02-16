@@ -78,76 +78,27 @@ For each research finding, create a document that includes:
 
 ## Repository Structure
 
+Keep it simple and flexible. Organize as you go.
+
 ```
 sfc-research/
-├── README.md                 # This file - overview and navigation
-├── research/                 # Core research findings
-│   ├── apis/                # API endpoint discoveries
-│   │   ├── e-distribution/  # SFC e-Distribution system APIs
-│   │   ├── circulars/       # Circulars and guidelines APIs
-│   │   ├── consultations/   # Public consultation APIs
-│   │   └── codes/           # Codes and guidelines APIs
-│   ├── documents/           # Document structure analysis
-│   │   ├── circulars/       # Circular document patterns
-│   │   ├── guidelines/      # Guidelines document patterns
-│   │   ├── codes/           # Codes of conduct patterns
-│   │   └── consultations/   # Consultation document patterns
-│   ├── scraping/            # Scraping methodology research
-│   │   ├── selectors/       # CSS selectors and DOM patterns
-│   │   ├── anti-bot/        # Anti-bot detection findings
-│   │   └── rate-limits/     # Rate limiting observations
-│   └── sfc-structure/       # SFC website organization
-│       ├── navigation/      # Site structure and navigation
-│       ├── search/          # Search functionality analysis
-│       └── archives/        # Historical data access
-├── findings/                # Processed findings and insights
-│   ├── api-endpoints.md     # Consolidated API documentation
-│   ├── content-patterns.md  # Common document patterns
-│   ├── data-models.md       # Proposed data models
-│   └── integration-notes.md # Integration recommendations
-├── experiments/             # Experimental code and tests
-│   ├── api-tests/          # API endpoint tests
-│   ├── scraper-tests/      # Scraping approach tests
-│   └── parser-tests/       # Content parsing experiments
-├── references/              # External references
-│   ├── sfc-docs/           # Downloaded SFC documentation
-│   ├── legal-framework/      # Legal framework documents
-│   └── related-projects/     # Related open source projects
-└── progress/                # Research progress tracking
-    ├── todo.md             # Current research tasks
-    ├── completed.md        # Completed research items
-    └── decisions.md        # Key decisions and rationale
+├── README.md              # This file
+├── notes/                 # Research notes (dated files)
+├── findings/              # Synthesized insights
+├── experiments/           # Test scripts and code
+├── references/            # Downloaded docs, PDFs, screenshots
+└── progress/              # Tracking what you're working on
 ```
 
-### Directory Purposes
+### Simple Guidelines
 
-#### `research/`
+- **`notes/`** - Drop research notes here. Name them `YYYYMMDD_what-you-found.md`
+- **`findings/`** - When patterns emerge, write up consolidated insights
+- **`experiments/`** - Any code you write to test something
+- **`references/`** - SFC PDFs, screenshots, external docs
+- **`progress/`** - `todo.md`, `completed.md` to track work
 
-Raw research findings organized by domain. Each subdirectory contains:
-- Markdown notes for each discovery
-- Code snippets for reproduction
-- Screenshots or evidence files
-- Links to relevant resources
-
-**Naming convention**: `{YYYYMMDD}_{brief-description}.md`
-
-Example: `20250215_e-distribution-pagination-api.md`
-
-#### `findings/`
-
-Consolidated, processed insights synthesized from raw research. These are the "conclusions" that inform system design.
-
-#### `experiments/`
-
-Working code, tests, and proof-of-concept implementations. Nothing here is production-ready, but everything teaches us something.
-
-#### `references/`
-
-Downloaded or referenced external materials. Keep SFC PDFs, screenshots, and related documentation here.
-
-#### `progress/`
-
-Tracking what's been done and what's next. Use this to maintain momentum and context across research sessions.
+That's it. No rigid subdirectories. Reorganize as needed.
 
 ---
 
@@ -155,53 +106,20 @@ Tracking what's been done and what's next. Use this to maintain momentum and con
 
 ### Research Workflow
 
-1. **Pick a domain** from the objectives above (APIs, documents, scraping, structure)
-2. **Create a research note** in the appropriate `research/` subdirectory
-3. **Document as you go** - don't wait until the end
-4. **Summarize findings** in `findings/` when patterns emerge
-5. **Update progress** in `progress/` to track status
+1. **Start exploring** - Pick an area (APIs, e-Distribution, documents)
+2. **Take notes** - Create a dated file in `notes/` as you discover things
+3. **Capture evidence** - Screenshots, API responses, URLs
+4. **Review and synthesize** - When you see patterns, write them up in `findings/`
+5. **Track progress** - Update `progress/todo.md` so you know what's next
 
 ### First Research Tasks
 
-Based on the sfc-fetch objective, priority research areas:
+Priority areas to explore:
 
-1. **API Discovery**
-   - Does SFC expose any public APIs?
-   - Are there hidden/internal endpoints that return JSON?
-   - Can we find structured data feeds?
-
-2. **e-Distribution System Analysis**
-   - How is the news/circulars list populated?
-   - Is there pagination? How does it work?
-   - What metadata is available for each item?
-
-3. **Document Structure Patterns**
-   - Common sections in circulars
-   - PDF vs HTML content availability
-   - Attachment handling patterns
-
-4. **Access Method Evaluation**
-   - API-first vs scraping requirements
-   - Rate limiting and anti-bot measures
-   - Authentication needs (if any)
-
----
-
-## Contributing to Research
-
-### When Adding Research
-
-1. Create dated markdown file in appropriate subdirectory
-2. Include discovery method, evidence, and implications
-3. Cross-reference related findings
-4. Update `progress/todo.md` to mark as in-progress or completed
-
-### When Synthesizing Findings
-
-1. Review related research notes
-2. Identify patterns and commonalities
-3. Write consolidated finding in `findings/`
-4. Link back to source research notes
+1. **API Discovery** - Does SFC expose any JSON endpoints or data feeds?
+2. **e-Distribution System** - How does the news/circulars list work? Pagination?
+3. **Document Patterns** - What do circulars look like? Common sections?
+4. **Access Methods** - API vs scraping? Any rate limits or anti-bot measures?
 
 ---
 
@@ -214,8 +132,6 @@ Once research is complete, findings will inform:
 - **Processing pipeline** - Content chunking and embedding approach
 - **Multi-agent integration** - How agents access and query SFC data
 
-Research findings will be the foundation for sfc-fetch design decisions.
-
 ---
 
 ## Notes
@@ -224,6 +140,7 @@ Research findings will be the foundation for sfc-fetch design decisions.
 - **Verify periodically** - Re-check findings every few months
 - **Document failures too** - What didn't work is as valuable as what did
 - **Stay legal** - Respect robots.txt, terms of service, and rate limits
+- **Stay flexible** - This structure is a starting point, not a rulebook
 
 ---
 

@@ -1,19 +1,11 @@
 # Key Decisions & Rationale
 
-*Important decisions made during the research process and the reasoning behind them.*
+*Important decisions made during the research process.*
 
-## Documentation Standards
+## 2025-02-15
 
-### Decision: Dated File Naming
-**Rationale:** SFC website structure changes over time. Dated files (`YYYYMMDD_description.md`) help track when research was conducted and identify potentially stale findings.
-
-### Decision: Separate Raw Research from Processed Findings
-**Rationale:** Raw research notes capture the discovery process with all its messiness. Processed findings in `findings/` provide clean, synthesized insights for decision-making. This separation allows both granular detail and high-level summaries to coexist.
-
-## Repository Structure
-
-### Decision: Domain-Based Organization
-**Rationale:** Research naturally clusters around domains (APIs, documents, scraping, structure). Organizing by domain makes it easier to find related research and identify gaps.
+### Decision: Simple, Flexible Folder Structure
+**Rationale:** Research direction is unknown at start. Rigid nested directories create friction. Flat structure with simple categories (`notes/`, `findings/`, `experiments/`, `references/`, `progress/`) allows organic organization as patterns emerge.
 
 ---
 
