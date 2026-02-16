@@ -42,6 +42,14 @@
   - Legacy files simply **not in the system**
   - See `notes/20260216_legacy_final_conclusion.md`
 
+- [x] ✅ **GATEWAY URL TEST** - Confirmed same API behavior via gateway route
+  - Tested: `gateway/EN/circular/doc?refNo=H035` (legacy) vs `doc?refNo=26EC6` (modern)
+  - Both trigger `/api/circular/content` endpoint
+  - Legacy: Returns `html: null` - page renders empty
+  - Modern: Returns full HTML (5,962 chars) - page renders complete content
+  - **Not a URL routing issue - backend simply has no legacy content**
+  - See `notes/20260216_gateway_url_test.md`
+
 ## 2025-02
 
 - [x] Repository structure established
