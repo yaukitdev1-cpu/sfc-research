@@ -4,7 +4,7 @@
 
 ## 2026-02-16
 
-### 🎉 MAJOR DISCOVERIES
+### 🎉 CIRCULARS RESEARCH COMPLETE
 
 - [x] ✅ **CIRCULAR SEARCH API** - List all circulars with pagination
   - `POST /api/circular/search`
@@ -16,37 +16,55 @@
   - Returns structured HTML (2012+ only)
   - See `notes/20260216_circular_content_api_complete.md`
 
-- [x] ✅ **CIRCULAR PDF API** - Download PDF files ⭐ **CRITICAL FINDING**
+- [x] ✅ **CIRCULAR PDF API** - Download PDF files
   - `GET /api/circular/openFile?lang={lang}&refNo={refNo}`
   - Returns `application/pdf` for ALL years (2000-2025)!
-  - Legacy circulars DO have PDFs! See `notes/20260216_legacy_final_conclusion.md`
+  - See `notes/20260216_legacy_final_conclusion.md`
 
 - [x] ✅ **APPENDIX API** - Download appendix PDFs
   - `GET /api/circular/openAppendix?lang={lang}&refNo={refNo}&appendix={index}`
   - Works for ALL years including legacy (2000-2025)
-  - See investigation notes
+
+### 🎉 CONSULTATIONS RESEARCH COMPLETE
+
+- [x] ✅ **CONSULTATION SEARCH API** - List all consultations
+  - `POST /api/consultation/search`
+  - 217 consultations (1989-2026)
+  - See `notes/20260216_consultations_api_research.md`
+
+- [x] ✅ **CONSULTATION CONTENT API** - Get HTML intro
+  - `GET /api/consultation/content?refNo={cpRefNo}&lang={lang}`
+  - Returns HTML for ALL years (1989-2026)
+
+- [x] ✅ **CONSULTATION PDF API** - Download consultation papers
+  - `GET /api/consultation/openFile?lang={lang}&refNo={cpRefNo}`
+  - Returns PDF for ALL years
+
+- [x] ✅ **CONCLUSION PDF API** - Download conclusion papers ⭐ **KEY DISCOVERY**
+  - `GET /api/consultation/openFile?lang={lang}&refNo={cpRefNo}&type=conclusion`
+  - Works for concluded consultations (185 total)
 
 ### 🔍 INVESTIGATIONS COMPLETED
 
-- [x] ✅ **HTML Content Gap Discovered**
+- [x] ✅ **Circulars: HTML Content Gap**
   - 2012+ (YYEC##): HTML + PDF available
   - 2000-2011 (H###): PDF only, no HTML
-  - See `notes/20260216_historical_data_limitations.md`
 
-- [x] ✅ **PDF Discovery for Legacy**
-  - Tested H035 (2000): Returns PDF (112,748 bytes)
-  - Tested H618 (2011): Has 2 appendices, both downloadable
-  - Confirmed: ALL years have PDFs via `openFile` API
-
-- [x] ✅ **Appendix Discovery for Legacy**
-  - H618 (2011): 2 appendices, PDFs available
-  - API: `openAppendix?refNo=H618&appendix=0` returns PDF
+- [x] ✅ **Consultations: Full Coverage Verified**
+  - Oldest: 89CP1 (1989) - All APIs work
+  - All years: 1989-2026 (37 years)
+  - HTML available for ALL years (unlike circulars)
+  - 85% have conclusion papers
 
 ### 📚 DELIVERABLES CREATED
 
-- [x] ✅ **API Summary**: `findings/CIRCULAR_API_SUMMARY.md`
-- [x] ✅ **Workflow Guide**: `findings/SFC_FETCH_WORKFLOW.md`
+- [x] ✅ **Circulars API Summary**: `findings/CIRCULAR_API_SUMMARY.md`
+- [x] ✅ **Circulars Workflow**: `findings/SFC_FETCH_WORKFLOW.md`
 - [x] ✅ **Architecture**: `findings/ARCHITECTURE.md`
+- [x] ✅ **Mermaid Diagrams**: `findings/MERMAID_DIAGRAMS.md`
+- [x] ✅ **Research Methodology**: `findings/RESEARCH_METHODOLOGY.md`
+- [x] ✅ **Consultations API Summary**: `findings/CONSULTATION_API_SUMMARY.md`
+- [x] ✅ **Consultations Workflow**: `findings/CONSULTATION_WORKFLOW.md`
 
 ## 2025-02
 
