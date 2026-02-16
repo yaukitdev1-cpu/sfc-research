@@ -202,7 +202,28 @@ If concluded:
 
 **Key Discovery:** Conclusion papers use same `openFile` endpoint with `type=conclusion` parameter
 
-**Coverage:** 217 consultations, 92 concluded (42%)
+**Coverage:** 217 consultations (1989-2026), 92 concluded (42%)
+
+### ⚠️ Critical Difference from Circulars
+
+| Aspect | Circulars | Consultations |
+|--------|-----------|---------------|
+| **Pre-2012 HTML** | `html: null` (not available) | `html: "<p></p>"` (empty placeholder) |
+| **Content Quality** | Full HTML sections (2012+) | Simple intro text (all years) |
+| **FileKeySeq Pattern** | Negative = legacy | Negative = legacy (same) |
+
+**Implication:** Consultations ALWAYS have HTML (even if empty), so no need for year-based logic like circulars.
+
+### Oldest Item Verification ✅
+
+**Tested:** 89CP1 (1989) and 94CP1 (1994)
+- ✅ Content API works
+- ✅ Download API works
+- ✅ Conclusion download works (for concluded)
+- ✅ Same reference format (YYCP##)
+- ✅ Negative fileKeySeq for legacy
+
+**Confirmed:** Pattern consistent across ALL years (1989-2026)
 
 **Storage Recommendation:**
 ```
@@ -212,7 +233,7 @@ consultations/
 │   │   └── 25CP11.pdf
 │   └── conclusion/
 │       └── 25CP6_conclusion.pdf
-├── html/          # Raw HTML from content API
+├── html/          # Raw HTML from content API (all years)
 ├── index.json     # Master index
 ```
 
