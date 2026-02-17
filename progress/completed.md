@@ -25,6 +25,10 @@
   - `GET /api/circular/openAppendix?lang={lang}&refNo={refNo}&appendix={index}`
   - Works for ALL years including legacy (2000-2025)
 
+**Workflow Guides Created:**
+- [x] ✅ **API Summary:** `findings/CIRCULAR_API_SUMMARY.md`
+- [x] ✅ **Workflow Guide:** `findings/CIRCULAR_WORKFLOW.md` ⭐ **NEW**
+
 ### 🎉 GUIDELINES RESEARCH COMPLETE (2026-02-17)
 
 **Source:** Main SFC website (www.sfc.hk) - NOT e-Distribution
@@ -117,14 +121,14 @@
 ### 📚 DELIVERABLES CREATED
 
 - [x] ✅ **Circulars API Summary**: `findings/CIRCULAR_API_SUMMARY.md`
-- [x] ✅ **Circulars Workflow**: `findings/SFC_FETCH_WORKFLOW.md`
-- [x] ✅ **Architecture**: `findings/ARCHITECTURE.md`
-- [x] ✅ **Mermaid Diagrams**: `findings/MERMAID_DIAGRAMS.md`
-- [x] ✅ **Research Methodology**: `findings/RESEARCH_METHODOLOGY.md`
+- [x] ✅ **Circulars Workflow**: `findings/CIRCULAR_WORKFLOW.md`
 - [x] ✅ **Consultations API Summary**: `findings/CONSULTATION_API_SUMMARY.md`
 - [x] ✅ **Consultations Workflow**: `findings/CONSULTATION_WORKFLOW.md`
 - [x] ✅ **News API Summary**: `findings/NEWS_API_SUMMARY.md`
 - [x] ✅ **News Workflow**: `findings/NEWS_WORKFLOW.md`
+- [x] ✅ **Guidelines Summary**: `findings/GUIDELINES_SUMMARY.md`
+- [x] ✅ **Guidelines Workflow**: `findings/GUIDELINES_WORKFLOW.md`
+- [x] ✅ **Research Methodology**: `findings/RESEARCH_METHODOLOGY.md`
 - [x] ✅ **News Edge Cases**: `notes/20260217_news_phase6_edge_cases.md`
 
 ## 2025-02

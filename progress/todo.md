@@ -28,11 +28,8 @@ All research objectives for SFC circulars have been achieved.
   - Daily check: Current year only
   - HTML→Markdown conversion for 2012+
   - PDF storage for all years
-
-- [x] ✅ **Architecture Documentation**
   - Storage structure defined
   - Data model documented
-  - File formats specified
   - Error handling strategy
 
 ---
@@ -45,18 +42,13 @@ All research objectives for SFC circulars have been achieved.
    - Document type codes
    - Historical coverage matrix
 
-2. **Workflow Guide** (`findings/SFC_FETCH_WORKFLOW.md`)
+2. **Workflow Guide** (`findings/CIRCULAR_WORKFLOW.md`)
    - Full download logic
    - Daily update check logic
    - HTML→Markdown conversion
    - File storage structure
    - Configuration examples
-
-3. **Architecture** (`findings/ARCHITECTURE.md`)
-   - System diagram
-   - Data flow diagrams
-   - Storage structure
-   - File formats
+   - Standardized format matching NEWS and CONSULTATIONS workflows
 
 ---
 

@@ -120,7 +120,7 @@ That's it. No rigid subdirectories. Reorganize as needed.
 ✅ **GUIDELINES** - Complete research (50 guidelines, HTML scraping, 32 with version history)  
 
 See `findings/` directory for comprehensive API documentation and workflow guides:
-- `CIRCULAR_API_SUMMARY.md` + `SFC_FETCH_WORKFLOW.md` - Circulars (e-Distribution API)
+- `CIRCULAR_API_SUMMARY.md` + `CIRCULAR_WORKFLOW.md` - Circulars (e-Distribution API) ⭐
 - `CONSULTATION_API_SUMMARY.md` + `CONSULTATION_WORKFLOW.md` - Consultations (e-Distribution API)
 - `NEWS_API_SUMMARY.md` + `NEWS_WORKFLOW.md` - News (e-Distribution API)
 - `GUIDELINES_SUMMARY.md` + `GUIDELINES_WORKFLOW.md` - Guidelines (Main website, HTML scraping)
