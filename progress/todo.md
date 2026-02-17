@@ -72,24 +72,37 @@ All research objectives for SFC circulars have been achieved.
 
 ---
 
-### 🔄 Next Phase Options
+### 🔄 Current Status
+
+**✅ CIRCULARS - COMPLETE** (Research + Workflow docs)
+**✅ CONSULTATIONS - COMPLETE** (Research + Workflow docs)
+**✅ NEWS - COMPLETE** (Research + Workflow docs - 2026-02-17)
+
+**Research Coverage:**
+- 🔧 5 API endpoints documented
+- 📊 5,205 news items mapped
+- 📅 30 years of history (1996-2026)
+- ⚠️ Error handling tested
+- 🔄 Workflow guide created
+
+### Next Phase Options
 
 **Option A: Start Building sfc-fetch**
-- Estimated: 2-3 hours initial download (700+ circulars)
-- Daily check: ~5 seconds
-- Storage: ~1.5GB for all PDFs
+- Estimated: 2-3 hours initial download
+  - Circulars: ~700 items, ~1.5GB PDFs
+  - Consultations: 217 items
+  - News: 5,205 items (HTML only, no PDFs)
+- Daily check: ~5 seconds per category
 
-**Option B: Research Other Sections**
-- News API (`/api/news/search`)
-- Consultation API (`/api/consultation/search`)
-- Similar pattern expected
-
-**Option C: Advanced Features**
+**Option B: Advanced Features**
 - Rate limiting tests
 - PDF text extraction for legacy circulars
 - Search/index optimization
 
-**Recommendation:** ✅ Ready to implement sfc-fetch based on comprehensive findings.
+**Option C: Research Other Sections**
+- SFC Codes (if available in API)
+
+**Recommendation:** ✅ Ready to implement sfc-fetch with comprehensive API coverage.
 
 ---
 

@@ -21,7 +21,7 @@ This research supports the development of a **Multi-Agent AI System** to help fi
 To build an intelligent compliance system, we need deep understanding of:
 
 1. **SFC API structures** - How data is exposed and accessible
-2. **Document organization** - How SFC structures circulars, guidelines, codes, and consultations
+2. **Document organization** - How SFC structures circulars, codes, and consultations
 3. **Content patterns** - Common formats, sections, and regulatory language used
 4. **Data relationships** - How different document types relate to each other
 5. **Update mechanisms** - How SFC publishes and notifies about regulatory changes
@@ -112,14 +112,22 @@ That's it. No rigid subdirectories. Reorganize as needed.
 4. **Review and synthesize** - When you see patterns, write them up in `findings/`
 5. **Track progress** - Update `progress/todo.md` so you know what's next
 
+### Completed Research Areas
+
+✅ **CIRCULARS** - Complete API documentation (4 endpoints, 2000-2025, ~700 items)  
+✅ **CONSULTATIONS** - Complete API documentation (4 endpoints, 1989-2026, 217 items)  
+✅ **NEWS** - Complete API documentation (5 endpoints, 1996-2026, 5,205 items)  
+
+See `findings/` directory for comprehensive API documentation and workflow guides.
+
 ### First Research Tasks
 
 Priority areas to explore:
 
-1. **API Discovery** - Does SFC expose any JSON endpoints or data feeds?
-2. **e-Distribution System** - How does the news/circulars list work? Pagination?
-3. **Document Patterns** - What do circulars look like? Common sections?
-4. **Access Methods** - API vs scraping? Any rate limits or anti-bot measures?
+1. ~~**API Discovery** - Does SFC expose any JSON endpoints or data feeds?~~ ✅ Done
+2. ~~**e-Distribution System** - How does the news/circulars list work? Pagination?~~ ✅ Done
+3. ~~**Document Patterns** - What do circulars look like? Common sections?~~ ✅ Done
+4. ~~**Access Methods** - API vs scraping? Any rate limits or anti-bot measures?~~ ✅ Done
 
 ---
 

@@ -25,6 +25,36 @@
   - `GET /api/circular/openAppendix?lang={lang}&refNo={refNo}&appendix={index}`
   - Works for ALL years including legacy (2000-2025)
 
+### 🎉 NEWS RESEARCH COMPLETE (2026-02-17)
+
+**API Endpoints Discovered:**
+- [x] ✅ **NEWS SEARCH API** - List all news
+  - `POST /api/news/search`
+  - 5,205 news items (1996-2026)
+  - See `notes/20260217_news_phase2_endpoint_analysis.md`
+
+- [x] ✅ **NEWS CONTENT API** - Get full HTML content
+  - `GET /api/news/content?refNo={refNo}&lang={lang}`
+  - Returns HTML for ALL years (1996-2026)!
+  - Supports images and appendices
+
+- [x] ✅ **NEWS NOTIFICATION API** - Bilingual content
+  - `GET /api/news/notification?refNo={refNo}`
+  - Returns EN + TC in single request
+
+- [x] ✅ **NEWS APPENDIX API** - Download appendix PDFs
+  - `GET /api/news/openAppendix?lang={lang}&refNo={refNo}&appendix={index}`
+  - Works for news with attachments
+
+- [x] ✅ **NEWS IMAGE API** - Download images
+  - `GET /api/news/openImage?refNo={refNo}&lang={lang}&image={index}`
+  - For news with embedded images
+
+**Research Documents Created:**
+- [x] ✅ **API Summary:** `findings/NEWS_API_SUMMARY.md`
+- [x] ✅ **Workflow Guide:** `findings/NEWS_WORKFLOW.md` ⭐ **NEW**
+- [x] ✅ **Edge Cases:** `notes/20260217_news_phase6_edge_cases.md`
+
 ### 🎉 CONSULTATIONS RESEARCH COMPLETE
 
 - [x] ✅ **CONSULTATION SEARCH API** - List all consultations
@@ -65,6 +95,9 @@
 - [x] ✅ **Research Methodology**: `findings/RESEARCH_METHODOLOGY.md`
 - [x] ✅ **Consultations API Summary**: `findings/CONSULTATION_API_SUMMARY.md`
 - [x] ✅ **Consultations Workflow**: `findings/CONSULTATION_WORKFLOW.md`
+- [x] ✅ **News API Summary**: `findings/NEWS_API_SUMMARY.md`
+- [x] ✅ **News Workflow**: `findings/NEWS_WORKFLOW.md`
+- [x] ✅ **News Edge Cases**: `notes/20260217_news_phase6_edge_cases.md`
 
 ## 2025-02
 

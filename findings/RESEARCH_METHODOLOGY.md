@@ -388,7 +388,7 @@ This methodology was successfully used to:
 **Apply this same technique to:**
 - SFC News API
 - SFC Consultations API  
-- SFC Guidelines/Codes
+- SFC Codes
 - Any other SFC e-Distribution category
 
 ---
