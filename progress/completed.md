@@ -25,6 +25,34 @@
   - `GET /api/circular/openAppendix?lang={lang}&refNo={refNo}&appendix={index}`
   - Works for ALL years including legacy (2000-2025)
 
+### 🎉 GUIDELINES RESEARCH COMPLETE (2026-02-17)
+
+**Source:** Main SFC website (www.sfc.hk) - NOT e-Distribution
+
+**API Endpoints Discovered:**
+- [x] ✅ **NONE** - Static HTML page (different from e-Distribution system)
+- [x] ✅ **HTML Scraping required** - Table-based structure with data attributes
+
+**Research Documents Created:**
+- [x] ✅ **Phase 1 Notes:** `notes/20260217_guidelines_main_website_phase1.md`
+- [x] ✅ **Summary:** `findings/GUIDELINES_SUMMARY.md`
+- [x] ✅ **Workflow Guide:** `findings/GUIDELINES_WORKFLOW.md` ⭐ NEW
+
+**Key Metrics:**
+- **50 Guidelines** total
+- **32 (64%)** have version history
+- **107 PDFs** in English (including historical versions)
+- **Data attributes:** `data-code-guideline-id`, `data-code-guideline-topics`
+- **URL patterns:** `/files-current/` and `/files-previous/`
+- **Multi-language:** EN, TC, SC available
+
+**Notable Guidelines:**
+- Fit and Proper Guidelines (4 versions, back to Dec 2000)
+- VATP Guidelines (Virtual Asset Trading Platform)
+- Licensing Handbook (Jul 2025)
+- AML/CFT Guidelines
+- Market Soundings Guidelines
+
 ### 🎉 NEWS RESEARCH COMPLETE (2026-02-17)
 
 **API Endpoints Discovered:**

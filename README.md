@@ -117,8 +117,13 @@ That's it. No rigid subdirectories. Reorganize as needed.
 ✅ **CIRCULARS** - Complete API documentation (4 endpoints, 2000-2025, ~700 items)  
 ✅ **CONSULTATIONS** - Complete API documentation (4 endpoints, 1989-2026, 217 items)  
 ✅ **NEWS** - Complete API documentation (5 endpoints, 1996-2026, 5,205 items)  
+✅ **GUIDELINES** - Complete research (50 guidelines, HTML scraping, 32 with version history)  
 
-See `findings/` directory for comprehensive API documentation and workflow guides.
+See `findings/` directory for comprehensive API documentation and workflow guides:
+- `CIRCULAR_API_SUMMARY.md` + `SFC_FETCH_WORKFLOW.md` - Circulars (e-Distribution API)
+- `CONSULTATION_API_SUMMARY.md` + `CONSULTATION_WORKFLOW.md` - Consultations (e-Distribution API)
+- `NEWS_API_SUMMARY.md` + `NEWS_WORKFLOW.md` - News (e-Distribution API)
+- `GUIDELINES_SUMMARY.md` + `GUIDELINES_WORKFLOW.md` - Guidelines (Main website, HTML scraping)
 
 ### First Research Tasks
 
@@ -128,6 +133,7 @@ Priority areas to explore:
 2. ~~**e-Distribution System** - How does the news/circulars list work? Pagination?~~ ✅ Done
 3. ~~**Document Patterns** - What do circulars look like? Common sections?~~ ✅ Done
 4. ~~**Access Methods** - API vs scraping? Any rate limits or anti-bot measures?~~ ✅ Done
+5. ~~**Guidelines** - How are SFC Guidelines structured on main website?~~ ✅ Done
 
 ---
 

@@ -85,24 +85,41 @@ All research objectives for SFC circulars have been achieved.
 - ⚠️ Error handling tested
 - 🔄 Workflow guide created
 
+### 🔄 Current Research
+
+**✅ GUIDELINES RESEARCH - COMPLETE** (2026-02-17)
+- [x] Phase 1: Initial reconnaissance - **COMPLETE**
+  - ✅ **Main SFC website** (www.sfc.hk) - NOT e-Distribution
+  - ✅ **50 Guidelines** discovered
+  - ✅ **32 with version history**
+  - ✅ Direct PDF links with hash-based versioning
+- [x] Phase 2: Deep structure analysis - **COMPLETE**
+  - ✅ HTML table structure with data attributes
+  - ✅ Topics categorization (Licensing, Intermediaries_supervision, etc.)
+  - ✅ Chinese versions verified (TC)
+- [x] Phase 3: Version history investigation - **COMPLETE**
+  - ✅ Popup-based historical versions
+  - ✅ `/files-previous/` path pattern
+  - ✅ Example: Fit and Proper (4 versions, back to Dec 2000)
+- [x] Phase 4: Documentation - **COMPLETE**
+  - ✅ `findings/GUIDELINES_SUMMARY.md` created
+
+---
+
 ### Next Phase Options
 
-**Option A: Start Building sfc-fetch**
+**Option A: Continue Research**
+- Guidelines research (in progress)
+- SFC Codes (if available in API)
+
+**Option B: Start Building sfc-fetch**
 - Estimated: 2-3 hours initial download
   - Circulars: ~700 items, ~1.5GB PDFs
   - Consultations: 217 items
   - News: 5,205 items (HTML only, no PDFs)
 - Daily check: ~5 seconds per category
 
-**Option B: Advanced Features**
-- Rate limiting tests
-- PDF text extraction for legacy circulars
-- Search/index optimization
-
-**Option C: Research Other Sections**
-- SFC Codes (if available in API)
-
-**Recommendation:** ✅ Ready to implement sfc-fetch with comprehensive API coverage.
+**Recommendation:** Complete Guidelines research first for comprehensive coverage.
 
 ---
 
