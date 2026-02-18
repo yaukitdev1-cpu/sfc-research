@@ -44,10 +44,6 @@
   - Markdown-only storage
   - Retry and re-run semantics
 
-**Supporting Design:**
-- [`STATE_MANAGED_WORKFLOW_SYSTEM.md`](STATE_MANAGED_WORKFLOW_SYSTEM.md) - Workflow state management concepts
-- [`schema.sql`](schema.sql) - Reference schema (SQLite-based, for understanding)
-- [`workflow-cli.js`](workflow-cli.js) - CLI implementation reference
 
 ### Key Statistics
 
@@ -213,20 +209,15 @@ sfc-research/
 │   ├── GUIDELINES_SUMMARY.md         # Guidelines research
 │   ├── GUIDELINES_WORKFLOW.md        # Guidelines processing workflow
 │   └── RESEARCH_METHODOLOGY.md       # How research was conducted
-│
-├── STATE_MANAGED_WORKFLOW_SYSTEM.md  # Workflow state management concepts
-├── README_STATE_SYSTEM.md             # Workflow CLI usage guide
-├── schema.sql                         # Reference database schema
-├── workflow-cli.js                    # CLI implementation reference
-│
 ├── notes/                             # Raw research notes (dated)
 │   ├── 20260216_circular_content_api_complete.md
 │   ├── 20260216_consultations_api_research.md
 │   ├── 20260217_news_phase1_reconnaissance.md
 │   └── ... (many more)
 │
-└── progress/                          # Tracking (archive)
+└── archive/                          # Tracking (archive)
     ├── todo.md                        # Completed tasks
+    ├── decisions.md                   # Key architectural decisions
     └── completed.md                   # Task completion log
 ```
 
