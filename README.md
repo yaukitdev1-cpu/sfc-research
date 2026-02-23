@@ -36,6 +36,7 @@
 ### Design Documentation (Complete)
 
 **Microservice Architecture:**
+- [`TECH_STACK.md`](TECH_STACK.md) - Technology stack and dependencies
 - [`DESIGN.md`](DESIGN.md) - **Complete microservice design document**
   - Document-oriented NoSQL data model (one refNo = one document)
   - Category-based API structure
@@ -197,6 +198,7 @@ All workflows include:
 ```
 sfc-research/
 ├── README.md                          # This file - current status
+├── TECH_STACK.md                      # Technology stack and dependencies
 ├── DESIGN.md                          # Complete microservice design
 │
 ├── findings/                          # Research outputs (COMPLETE)
