@@ -723,6 +723,8 @@ Response:
 |-------|-------------|-------------------|
 | `PENDING` | Not yet discovered or re-run reset | DISCOVERED |
 | `DISCOVERED` | Found in source, ready to download | DOWNLOADING |
+
+> **Auto-Discovery Entry Point**: The DiscoveryScheduler (see [AUTO_DISCOVERY_ARCHITECTURE.md](./findings/AUTO_DISCOVERY_ARCHITECTURE.md)) discovers new documents via API and adds them to the queue with `PENDING` or `DISCOVERED` status. Documents not yet in the database are queued for first-time processing.
 | `DOWNLOADING` | Fetching raw content from SFC | PROCESSING, FAILED |
 | `PROCESSING` | Converting to markdown | COMPLETED, FAILED |
 | `COMPLETED` | All done, markdown available | RE_RUNNING, STALE |
@@ -810,6 +812,17 @@ Response:
 2. **Retry Capability**: Resume from failed step
 3. **Re-run Capability**: Start from scratch with output archiving
 4. **False Positive Handling**: Re-run when processing errors are discovered
+
+### Auto-Discovery Requirements
+
+1. **Automatic Enumeration**: Discover all documents via API without manual intervention
+2. **Scheduled Execution**: Run discovery on configurable cron schedule (default: daily 2 AM)
+3. **Idempotent Operation**: Skip documents already COMPLETED or currently in progress
+4. **Comprehensive Coverage**: Handle pagination to enumerate all documents per category
+5. **Category Parity**: Support discovery for Circulars, Consultations, News, and Guidelines
+6. **Deduplication**: Check database status before queuing to avoid duplicates
+
+For full auto-discovery architecture details, see [AUTO_DISCOVERY_ARCHITECTURE.md](./findings/AUTO_DISCOVERY_ARCHITECTURE.md).
 
 ### Portability Requirements
 
